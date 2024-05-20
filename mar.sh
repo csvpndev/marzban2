@@ -50,9 +50,10 @@ fi
 # Fungsi untuk menambahkan repo Debian 11
 addDebian11Repo() {
     echo "#mirror_kambing-sysadmind deb11
-deb http://kartolo.sby.datautama.net.id/debian bullseye main contrib non-free
-deb http://kartolo.sby.datautama.net.id/debian bullseye-updates main contrib non-free
-deb http://kartolo.sby.datautama.net.id/debian-security bullseye-security main contrib non-free" | sudo tee /etc/apt/sources.list > /dev/null
+deb http://deb.debian.org/debian bullseye main contrib non-free
+deb http://deb.debian.org/debian bullseye-updates main contrib non-free
+deb http://deb.debian.org/debian bullseye-backports main contrib non-free
+deb http://security.debian.org/debian-security/ bullseye-security main contrib non-free" | sudo tee /etc/apt/sources.list > /dev/null
 }
 
 # Fungsi untuk menambahkan repo Ubuntu 20.04
@@ -176,10 +177,10 @@ timedatectl set-timezone Asia/Jakarta;
 sudo bash -c "$(curl -sL https://github.com/GawrAme/Marzban-scripts/raw/master/marzban.sh)" @ install
 
 #Install Subs
-wget -N -P /var/lib/marzban/templates/subscription/  https://raw.githubusercontent.com/GawrAme/MarLing/main/index.html
+wget -N -P /var/lib/marzban/templates/subscription/  https://raw.githubusercontent.com/csvpndev/marzban2/main/index.html
 
 #install env
-wget -O /opt/marzban/.env "https://raw.githubusercontent.com/GawrAme/MarLing/main/env"
+wget -O /opt/marzban/.env "https://raw.githubusercontent.com/csvpndev/marzban2/main/env"
 
 #install core Xray
 mkdir -p /var/lib/marzban/core
@@ -189,20 +190,20 @@ cd
 
 #profile
 echo -e 'profile' >> /root/.profile
-wget -O /usr/bin/profile "https://raw.githubusercontent.com/GawrAme/MarLing/main/profile";
+wget -O /usr/bin/profile "https://raw.githubusercontent.com/csvpndev/marzban2/main/profile";
 chmod +x /usr/bin/profile
 apt install neofetch -y
-wget -O /usr/bin/cekservice "https://raw.githubusercontent.com/GawrAme/MarLing/main/cekservice.sh"
+wget -O /usr/bin/cekservice "https://raw.githubusercontent.com/csvpndev/marzban2/main/cekservice.sh"
 chmod +x /usr/bin/cekservice
 
 #install compose
-wget -O /opt/marzban/docker-compose.yml "https://raw.githubusercontent.com/GawrAme/MarLing/main/docker-compose.yml"
+wget -O /opt/marzban/docker-compose.yml "https://raw.githubusercontent.com/csvpndev/marzban2/main/docker-compose.yml"
 
 #Install VNSTAT
 apt -y install vnstat
 /etc/init.d/vnstat restart
 apt -y install libsqlite3-dev
-wget https://github.com/GawrAme/MarLing/raw/main/vnstat-2.6.tar.gz
+wget https://github.com/csvpndev/marzban2/raw/main/vnstat-2.6.tar.gz
 tar zxvf vnstat-2.6.tar.gz
 cd vnstat-2.6
 ./configure --prefix=/usr --sysconfdir=/etc && make && make install 
@@ -221,11 +222,11 @@ sudo apt-get install speedtest -y
 mkdir -p /var/log/nginx
 touch /var/log/nginx/access.log
 touch /var/log/nginx/error.log
-wget -O /opt/marzban/nginx.conf "https://raw.githubusercontent.com/GawrAme/MarLing/main/nginx.conf"
-wget -O /opt/marzban/default.conf "https://raw.githubusercontent.com/GawrAme/MarLing/main/vps.conf"
-wget -O /opt/marzban/xray.conf "https://raw.githubusercontent.com/GawrAme/MarLing/main/xray.conf"
+wget -O /opt/marzban/nginx.conf "https://raw.githubusercontent.com/csvpndev/marzban2/main/nginx.conf"
+wget -O /opt/marzban/default.conf "https://raw.githubusercontent.com/csvpndev/marzban2/main/vps.conf"
+wget -O /opt/marzban/xray.conf "https://raw.githubusercontent.com/csvpndev/marzban2/main/xray.conf"
 mkdir -p /var/www/html
-echo "<pre>Setup by AutoScript LingVPN</pre>" > /var/www/html/index.html
+echo "<pre>Setup by AutoScript Cobek Sawit VPN</pre>" > /var/www/html/index.html
 
 #install socat
 apt install iptables -y
@@ -234,9 +235,9 @@ apt install socat cron bash-completion -y
 
 #install cert
 curl https://get.acme.sh | sh -s email=$email
-/root/.acme.sh/acme.sh --server letsencrypt --register-account -m $email --issue -d $domain --standalone -k ec-256 --debug
+/root/.acme.sh/acme.sh --server letsencrypt --register-account -m $email --issue --alpn -d $domain --standalone -k ec-256 --force --debug
 ~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /var/lib/marzban/xray.crt --keypath /var/lib/marzban/xray.key --ecc
-wget -O /var/lib/marzban/xray_config.json "https://raw.githubusercontent.com/GawrAme/MarLing/main/xray_config.json"
+wget -O /var/lib/marzban/xray_config.json "https://raw.githubusercontent.com/csvpndev/marzban2/main/xray_config.json"
 
 #install firewall
 apt install ufw -y
@@ -252,7 +253,7 @@ sudo ufw allow 1080/udp
 yes | sudo ufw enable
 
 #install database
-wget -O /var/lib/marzban/db.sqlite3 "https://github.com/GawrAme/MarLing/raw/main/db.sqlite3"
+wget -O /var/lib/marzban/db.sqlite3 "https://github.com/csvpndev/marzban2/raw/main/db.sqlite3"
 
 #install WARP Proxy
 wget -O /root/warp "https://raw.githubusercontent.com/hamid-gh98/x-ui-scripts/main/install_warp_proxy.sh"
@@ -280,8 +281,8 @@ echo "username  : ${userpanel}" | tee -a log-install.txt
 echo "password  : ${passpanel}" | tee -a log-install.txt
 echo "-=================================-" | tee -a log-install.txt
 echo "Jangan lupa join Channel & Grup Telegram saya juga di" | tee -a log-install.txt
-echo "Telegram Channel: https://t.me/LingVPN" | tee -a log-install.txt
-echo "Telegram Group: https://t.me/LingVPN_Group" | tee -a log-install.txt
+echo "Telegram Channel: https://t.me/cobeksawitofficial" | tee -a log-install.txt
+echo "Telegram Group: https://t.me/csvpngrup" | tee -a log-install.txt
 echo "-=================================-" | tee -a log-install.txt
 colorized_echo green "Script telah berhasil di install"
 rm /root/mar.sh
