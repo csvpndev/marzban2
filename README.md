@@ -1,4 +1,4 @@
-# MarLing
+# MarLing Mod By COBEKSAWIT
 
 Ini adalah [Marzban](https://github.com/Gozargah/Marzban) yang sudah saya tambahkan nginx untuk konfigurasi koneksi WebSocket, HTTP Upgrade dan gRPC single port. </br>
 WebSocket sudah support untuk 443 TLS, 80 HTTP dan Wildcard path, contoh /enter-your-custom-path/trojan </br>
@@ -74,13 +74,13 @@ Lalu ubah variabel {SERVER_IP} dibawah menjadi domain yang sudah di pointing tad
 ![image](https://github.com/GawrAme/MarLing/assets/97426017/191a485c-07a7-4a28-88d3-b66fa403abc7)
 </br>
 
-Jika ada typo atau saran bisa PM ke saya di :<a href="https://t.me/EkoLing" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a><br>
-Jika anda berminat bisa join ke Telegram channel saya di :<a href="https://t.me/LingVPN" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a><br>
+Jika ada typo atau saran bisa PM ke saya di :<a href="https://t.me/cobeksawitofficial" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a><br>
+Jika anda berminat bisa join ke Telegram channel saya di :<a href="https://t.me/csvpngrup" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a><br>
 <br>
 
 Jika menurut pean script ini membantu, boleh kira nya membelikan saya secangkir kopi melalui QRis dibawah, berapapun nominal nya saya terima 🙏 <br>
 
-![image](https://github.com/GawrAme/MarLing/assets/97426017/096f46ba-ed4d-47c8-a887-f3f3acd595d5)
+![image](https://github.com/csvpndev/marzban/assets/128266371/efba8f8e-95ba-4fac-a603-e513882cc8f0)
 
 Terima kasih orang baik! 🙏 
 
