@@ -1,6 +1,6 @@
 services:
   marzban:
-    image: gozargah/marzban:latest
+    image: gozargah/marzban:v0.6.0
     restart: always
     env_file: .env
     network_mode: host
@@ -8,7 +8,6 @@ services:
     - /etc/timezone:/etc/timezone:ro
     - /etc/localtime:/etc/localtime:ro
     - /var/lib/marzban:/var/lib/marzban
-    - /opt/marzban/index.html:/code/app/templates/subscription/index.html
     
   nginx:
     image: nginx
