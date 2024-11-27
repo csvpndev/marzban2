@@ -182,9 +182,10 @@ wget -N -P /opt/marzban/  https://raw.githubusercontent.com/csvpndev/marzban2/ma
 #install env
 wget -O /opt/marzban/.env "https://raw.githubusercontent.com/csvpndev/marzban2/main/env"
 
-#install core Xray
+#install core Xray & Assets folder
+mkdir -p /var/lib/marzban/assets
 mkdir -p /var/lib/marzban/core
-wget -O /var/lib/marzban/core/xray.zip "https://github.com/XTLS/Xray-core/releases/download/v1.8.10/Xray-linux-64.zip"  
+wget -O /var/lib/marzban/core/xray.zip "https://github.com/XTLS/Xray-core/releases/download/v1.8.16/Xray-linux-64.zip"  
 cd /var/lib/marzban/core && unzip xray.zip && chmod +x xray
 cd
 
