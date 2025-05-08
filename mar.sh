@@ -241,6 +241,11 @@ curl https://get.acme.sh | sh -s email=$email
 ~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /var/lib/marzban/xray.crt --keypath /var/lib/marzban/xray.key --ecc
 wget -O /var/lib/marzban/xray_config.json "https://raw.githubusercontent.com/csvpndev/marzban2/main/xray_config.json"
 
+#install Template Marzban
+cd /opt/marzban
+wget -O index.html https://raw.githubusercontent.com/MuhammadAshouri/marzban-templates/master/template-01/index.html
+cd
+
 #install firewall
 apt install ufw -y
 sudo ufw default deny incoming
